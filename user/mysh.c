@@ -202,8 +202,22 @@ void run_comd(command* cmd){
                 fprintf(2, "open %s failed\n", cmd->next->args[0]);
                 exit(1);
             }
-                
-            exec(cmd->previous->args[0], cmd->previous->args);
+
+            //cheeky.....
+            for(int i = 0; i <cmd->next->args_size; i++){
+
+                free(cmd->next->args[i]); //could i just do free(cmd->next->args[0]); ?
+            }
+
+            cmd->next->args_size = cmd->previous->args_size;
+            for(int i = 0; i < cmd->previous->args_size; i++){
+
+                    cmd->next->args[i] = (char*) malloc(sizeof(cmd->previous->args[i]));
+                    strcpy(cmd->next->args[i], cmd->previous->args[i]);
+
+            }
+            run_comd(cmd->next);
+            //exec(cmd->previous->args[0], cmd->previous->args);
 
         }else{
 
