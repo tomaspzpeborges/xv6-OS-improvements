@@ -271,8 +271,8 @@ int parse_cmd(char* input, commandS* list_cmds ){
     //SEPARATING ALL THE ARGUMENTS TO AN ARRAY OF STRINGS
     for(int i =0; i <strlen(input); i++){
         
-    
-        if ( (input[i] == ' ') || (i==(strlen(input)-1)) || (input[i] == '\n') || (input[i] == '\t') ){
+        //replace (i==(strlen(input)-1) with (input[i] == ';') ?
+        if ( (input[i] == ' ') || (input[i] == ';') || (input[i] == '\n') || (input[i] == '\t') ){
 
 
 
