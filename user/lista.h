@@ -1,7 +1,5 @@
 
 
-#ifndef LISTA_H
-
 /**
 * registo para armazenar elementos da lista duplamente ligada
 * este registo contem uma string e apontadores para o proximo e
@@ -94,8 +92,9 @@ l_elemento* lista_remove(lista *lst, l_elemento *pos);
 *  parametro: pos elemento onde colocar valor
 *  parametro: str string pretendida
 *  retorno: -1 se ocorrer algum erro (p.ex. se valor pos indicar uma posicao invalida) ou pos se bem sucedido
-*/
+
 int lista_atribui(lista *lst, l_elemento *pos, const char* str);
+*/
 
 /**
  *  devolve a posicao do primeiro elemento da lista com a string especificada
@@ -114,5 +113,3 @@ l_elemento* lista_pesquisa(lista *lst, const char* str, int origem);
 int lista_ordena(lista *lst);
 
 
-#define LISTA_H
-#endif

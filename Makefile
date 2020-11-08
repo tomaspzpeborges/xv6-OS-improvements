@@ -141,6 +141,10 @@ UPROGS=\
 	$U/_fork_process\
 	$U/_pingpong\
 	$U/_mysh\
+	$U/_memory_management\
+	$U/_lista\
+	$U/_tests_malloc\
+	$U/_mymemtest\
 
 
 

@@ -178,7 +178,7 @@ void run_comd(command* cmd){
         if( (cmd->next) && (cmd->previous) ){
 
 			close(1);
-            if(open(cmd->next->args[0], O_WRONLY) < 0){
+            if(open(cmd->next->args[0], O_WRONLY|O_CREATE|O_TRUNC) < 0){
                 fprintf(2, "open %s failed\n", cmd->next->args[0]);
                 exit(1);
             }
@@ -354,7 +354,7 @@ int get_cmd(char *buffer, int nbuffer) {
 
 int main(int argc, char *argv[]) {
 
-    printf("TZB shell\n");
+    //printf("TZB shell\n");
 
     int fd;
     static char buffer[100];//buffer for the command line input
